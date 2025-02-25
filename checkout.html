@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrekenen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Afrekenen</h1>
+    <p>Totaal: €<span id="total-price">0</span></p>
+    <button onclick="payWithMollie()">Betaal met iDEAL / Creditcard</button>
+
+    <script>
+        let total = 0;
+        cart.forEach(item => total += item.price);
+        document.getElementById("total-price").textContent = total.toFixed(2);
+
+        function payWithMollie() {
+            window.location.href = "https://www.mollie.com/dashboard/payments"; 
+        }
+    </script>
+</body>
+</html>
